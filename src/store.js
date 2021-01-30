@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 
 const store = reactive({
-    // x: localStorage.getItem('x') || defaultX,
+    // example: localStorage.getItem('example') || defaultExample,
     setKey: (key, value, save = true) => {
         save && localStorage.setItem(key, value)
         store[key] = value
