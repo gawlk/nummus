@@ -1,8 +1,7 @@
 <template>
     <component
-        :is="props.href ? 'a' : 'button'"
+        :is="props.href ? Link : 'button'"
         :href="href"
-        @click.prevent="href && pushUrl(href)"
         :class="[
             props.light
                 ? 'bg-gray-50 hover:bg-gray-100 text-black text-opacity-50 hover:text-opacity-75'
@@ -28,6 +27,8 @@
 <script setup>
     import { defineProps } from 'vue'
 
+    import Link from './Link.vue'
+
     const props = defineProps({
         href: String,
         light: Boolean,
@@ -38,9 +39,4 @@
         full: Boolean,
         center: Boolean,
     })
-
-    const pushUrl = (href) => {
-        history.pushState(null, '', href)
-        window.dispatchEvent(new Event('popstate'))
-    }
 </script>
