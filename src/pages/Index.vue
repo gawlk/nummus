@@ -7,6 +7,11 @@
 <script setup>
     import jsSHA from '/cdn/jssha'
 
+    const fetchCoinbasePro = async (key, secret, passphrase) => {
+        // TO DO
+        const url = 'https://api.pro.coinbase.com/accounts'
+    }
+
     const fetchBinance = async (key, secret) => {
         if (key && secret) {
             const url = 'https://api.binance.com/api/v3/account'
@@ -41,22 +46,6 @@
         binance: [
             {
                 name: 'Crypto ML BTC + Shit HODL',
-                key: '',
-                secret: '',
-            },
-            {
-                name: 'Crypto Samurai',
-                future: true,
-                key: '',
-                secret: '',
-            },
-            {
-                name: 'Crypto ML ETH',
-                key: '',
-                secret: '',
-            },
-            {
-                name: 'Tradeium',
                 key: '',
                 secret: '',
             },

@@ -14,7 +14,7 @@
     "workers:publish": "yarn build && wrangler publish"
   },
   "dependencies": {
-    "@headlessui/vue": "^0.2.0",
+    "@headlessui/vue": "^0.3.0",
     "@vueuse/head": "^0.2.3",
     "vue": "^3.0.5"
   },
@@ -25,10 +25,10 @@
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.4",
     "tailwindcss": "^2.0.2",
-    "vite": "2.0.0-beta.59",
-    "vite-plugin-cdn-auto": "^0.0.5",
+    "vite": "2.0.0-beta.67",
+    "vite-plugin-cdn-auto": "^0.0.6",
     "vite-plugin-components": "^0.6.6",
     "vite-plugin-compress": "^2.0.0",
-    "vite-plugin-full-pwa": "^0.0.4"
+    "vite-plugin-full-pwa": "^0.0.7"
   }
 }
