@@ -1,24 +1,35 @@
 <template>
     <component
         :is="props.href ? Link : 'button'"
+        :disabled="props.disabled"
         :href="href"
         :class="[
-            props.light
-                ? 'bg-gray-50 hover:bg-gray-100 text-black text-opacity-50 hover:text-opacity-75'
-                : 'bg-gray-900 hover:bg-gray-700 text-white',
             props.xxl
-                ? 'text-3xl font-extrabold py-6 px-12 rounded-2xl'
+                ? 'text-2xl font-bold py-6 px-12 rounded-2xl'
                 : props.xl
-                ? 'text-2xl font-extrabold py-4 px-8 rounded-xl'
+                ? 'text-xl font-bold py-4 px-8 rounded-xl'
                 : props.lg
-                ? 'text-xl font-bold py-3 px-6 rounded-xl'
-                : props.md
-                ? 'text-lg font-semibold py-3 px-6 rounded-xl'
+                ? 'text-lg font-medium py-3 px-6 rounded-xl'
                 : 'text-base font-medium py-2 px-4 rounded-lg',
-            !props.full && 'sm:w-auto',
+            props.dark
+                ? 'bg-gray-800 text-white focus:ring-gray-500'
+                : props.green
+                ? 'bg-green-800 text-white focus:ring-green-500'
+                : props.red
+                ? 'bg-red-800 text-white focus:ring-red-500'
+                : 'bg-gray-200 text-gray-900 focus:ring-gray-400',
+            !props.disabled &&
+                (props.dark
+                    ? 'hover:bg-gray-700'
+                    : props.green
+                    ? 'hover:bg-green-700'
+                    : props.red
+                    ? 'hover:bg-red-700'
+                    : 'hover:bg-white'),
             props.center && 'justify-center',
+            props.disabled ? 'opacity-75 cursor-default' : 'cursor-pointer',
         ]"
-        class="w-full flex-none inline-flex items-center cursor-pointer leading-6 border border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+        class="inline-flex items-center leading-6 focus:outline-none focus:ring transition-colors duration-200"
     >
         <slot></slot>
     </component>
@@ -30,9 +41,11 @@
     import Link from './Link.vue'
 
     const props = defineProps({
+        disabled: Boolean,
         href: String,
-        light: Boolean,
-        md: Boolean,
+        dark: Boolean,
+        green: Boolean,
+        red: Boolean,
         lg: Boolean,
         xl: Boolean,
         xxl: Boolean,

@@ -4,17 +4,16 @@
 
 <style>
     @font-face {
-        font-family: 'Inter var';
+        font-family: 'Fira Code var';
         font-weight: 100 900;
         font-style: normal;
         font-named-instance: 'Regular';
         font-display: swap;
-        src: url('/fonts/Inter.var.woff2') format('woff2');
+        src: url('/fonts/FiraCode.var.ttf') format('truetype');
     }
 </style>
 
 <script setup>
-    import { shallowRef, defineAsyncComponent } from 'vue'
     import { useHead } from '@vueuse/head'
 
     import packageJSON from '/src/../package.json'

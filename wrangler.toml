@@ -7,4 +7,4 @@ zone_id = ""
 
 [site]
 bucket = "dist"
-entry-point = "workers-site"
+entry-point = "worker"

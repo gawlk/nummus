@@ -1,5 +1,8 @@
 import { shallowRef, defineAsyncComponent, reactive } from 'vue'
 
+import store from './store'
+import database from './scripts/database'
+
 const router = reactive({})
 
 const pages = import.meta.glob('./pages/**/*.vue')
@@ -22,11 +25,25 @@ router.page = page
 const checkPath = (path) => {
     // Path logic here
 
-    return routes[path] ? path : '/'
+    path = routes[path] ? path : '/'
+
+    if (path === '/login' && localStorage.getItem('supabase.auth.token')) {
+        return '/app'
+    } else if (
+        path.startsWith('/app') &&
+        !localStorage.getItem('supabase.auth.token')
+    ) {
+        return '/login'
+    } else {
+        return path
+    }
 }
 
 const getPage = async (path) => {
     // Pre page actions here
+
+    console.log('session', database.auth.session())
+    console.log('user', database.auth.user())
 
     router.path = checkPath(path)
 
