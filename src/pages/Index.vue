@@ -33,29 +33,7 @@
 <script setup>
     import { reactive } from 'vue'
 
-    import Coin from '/src/assets/svg/coin.svg'
-
-    import database from '/src/scripts/database'
-    import { regexEmail } from '/src/scripts/regexes'
-
-    const state = reactive({
-        email: '',
-        invalidEmail: false,
-    })
-
-    const signIn = async () => {
-        state.invalidEmail = false
-
-        if (regexEmail.test(state.email)) {
-            const { user, session, error } = await database.auth.signIn({
-                email: state.email,
-            })
-
-            console.log(user, session, error)
-        } else {
-            state.invalidEmail = true
-        }
-    }
+    import CurrencyDollar from '/src/assets/svg/outline/currency-dollar.svg'
 
     const scrollDown = () => {}
 </script>

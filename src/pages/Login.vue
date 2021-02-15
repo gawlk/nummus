@@ -39,7 +39,7 @@
 <script setup>
     import { reactive } from 'vue'
 
-    import UserCircle from '/src/assets/svg/user-circle.svg'
+    import UserCircle from '/src/assets/svg/outline/user-circle.svg'
 
     import database from '/src/scripts/database'
     import { regexEmail } from '/src/scripts/regexes'
@@ -58,6 +58,7 @@
                 database.auth.signIn({
                     email: state.email,
                 })
+
                 state.emailSent = true
             } else {
                 state.invalidEmail = true
