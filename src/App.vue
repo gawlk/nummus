@@ -31,4 +31,10 @@
             },
         ],
     })
+
+    if (import.meta.hot) {
+        import.meta.hot.accept('./router.js', (router) => {
+            console.log('new router')
+        })
+    }
 </script>

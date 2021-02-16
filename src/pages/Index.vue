@@ -2,7 +2,7 @@
     <div class="h-screen w-screen flex items-center justify-center p-4">
         <div class="space-y-8 sm:space-y-12">
             <div class="flex items-center space-x-2">
-                <Coin class="h-6 w-6 sm:h-8 sm:w-8 text-gray-200" />
+                <CurrencyDollar class="h-6 w-6 sm:h-8 sm:w-8 text-gray-200" />
                 <p class="text-xl sm:text-2xl font-medium text-gray-200">
                     Nummus
                 </p>
@@ -31,8 +31,6 @@
 </template>
 
 <script setup>
-    import { reactive } from 'vue'
-
     import CurrencyDollar from '/src/assets/svg/outline/currency-dollar.svg'
 
     const scrollDown = () => {}

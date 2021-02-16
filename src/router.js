@@ -27,13 +27,15 @@ const checkPath = (path) => {
 
     path = routes[path] ? path : '/'
 
-    if (path === '/login' && localStorage.getItem('supabase.auth.token')) {
+    // console.log('auth', localStorage.getItem('supabase.auth.token'))
+
+    if (path === '/auth' && localStorage.getItem('supabase.auth.token')) {
         return '/app'
     } else if (
         path.startsWith('/app') &&
         !localStorage.getItem('supabase.auth.token')
     ) {
-        return '/login'
+        return '/auth'
     } else {
         return path
     }
@@ -42,8 +44,8 @@ const checkPath = (path) => {
 const getPage = async (path) => {
     // Pre page actions here
 
-    console.log('session', database.auth.session())
-    console.log('user', database.auth.user())
+    // console.log('session', database.auth.session())
+    // console.log('user', database.auth.user())
 
     router.path = checkPath(path)
 

@@ -6,6 +6,7 @@ import path from 'path'
 import svgLoader from 'vite-svg-loader'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+// import windiCSS from 'vite-plugin-windicss'
 
 /**
  * @type {import('vite').UserConfig}
@@ -19,6 +20,11 @@ export default {
   plugins: [
     vue(),
     vueJsx(),
+    // ...windiCSS({
+    //   preflight: {
+    //     safelist: 'button a',
+    //   },
+    // }),
     components(),
     cdnAuto(),
     svgLoader(),

@@ -2,11 +2,7 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: {
-    mode: 'all',
-    content: ['./index.html', './src/**/*.{html,vue,js,ts,jsx,tsx,svelte}'],
-  },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -18,9 +14,6 @@ module.exports = {
         serif: ['Literata var', ...defaultTheme.fontFamily.serif],
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

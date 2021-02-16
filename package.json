@@ -26,11 +26,12 @@
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.4",
     "tailwindcss": "^2.0.2",
-    "vite": "2.0.0-beta.69",
+    "vite": "2.0.0-beta.70",
     "vite-plugin-cdn-auto": "^0.0.6",
     "vite-plugin-components": "^0.6.10",
     "vite-plugin-compress": "^2.0.0",
     "vite-plugin-full-pwa": "^0.0.7",
+    "vite-plugin-windicss": "^0.1.15",
     "vite-svg-loader": "^1.4.2"
   }
 }

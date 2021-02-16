@@ -4,6 +4,7 @@
         :href="href"
         @click.prevent="to"
         :class="disabled ? 'cursor-not-allowed' : ''"
+        class="inline-block"
     >
         <slot></slot>
     </a>
